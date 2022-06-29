@@ -1,13 +1,21 @@
 import React from "react";
 import {
+  BadgePercent,
   Briefcase,
+  ClipBoardList,
+  Coins,
   Dropdown,
+  Galaxy,
   Home,
   LoanRequest,
   PiggyBank,
   Sack,
   Savings,
+  Scroll,
+  SliderH,
+  Transactions,
   UserCheck,
+  UserCog,
   Users,
   UserTimes,
 } from "../../../svgIcons";
@@ -15,6 +23,7 @@ import {
 import "../../../styles/sidebar.scss";
 import UserFriends from "../../../svgIcons/UserFriends";
 import Hand from "../../../svgIcons/Hand";
+import ChartBar from "../../../svgIcons/ChartBar";
 
 const SideBar = () => {
   return (
@@ -81,24 +90,44 @@ const SideBar = () => {
             <p className="text activetext">Savings Products</p>
           </div>
           <div className="sidebar__nav__section__option">
-            <Hand />
-            <p className="text activetext">Decision Models</p>
+            <Coins />
+            <p className="text activetext">Fees and Charges</p>
           </div>
           <div className="sidebar__nav__section__option">
-            <PiggyBank />
-            <p className="text activetext">Savings</p>
+            <Transactions />
+            <p className="text activetext">Transactions</p>
           </div>
           <div className="sidebar__nav__section__option">
-            <LoanRequest />
-            <p className="text activetext">Loan Requests</p>
+            <Galaxy />
+            <p className="text activetext">Services</p>
           </div>
           <div className="sidebar__nav__section__option">
-            <UserCheck />
-            <p className="text activetext">Whitelist</p>
+            <UserCog />
+            <p className="text activetext">Service Account</p>
           </div>
           <div className="sidebar__nav__section__option">
-            <UserTimes />
-            <p className="text activetext">Karma</p>
+            <Scroll />
+            <p className="text activetext">Settlements</p>
+          </div>
+          <div className="sidebar__nav__section__option">
+            <ChartBar />
+            <p className="text activetext">Reports</p>
+          </div>
+        </div>
+        {/* SETTING */}
+        <div className="sidebar__nav__section">
+          <p className="header">SETTINGS</p>
+          <div className="sidebar__nav__section__option active">
+            <SliderH />
+            <p className="text activetext">Preferences</p>
+          </div>
+          <div className="sidebar__nav__section__option">
+            <BadgePercent />
+            <p className="text activetext">Fees and Pricing</p>
+          </div>
+          <div className="sidebar__nav__section__option">
+            <ClipBoardList />
+            <p className="text activetext">Audit Logs</p>
           </div>
         </div>
       </div>
