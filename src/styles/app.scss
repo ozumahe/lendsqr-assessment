@@ -7,3 +7,17 @@ body {
   background: #fbfbfb;
   font-family: Work Sans;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #39cdcc;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+.container {
+  // max-width: 1440px;
+  // margin: 0 auto;
+}

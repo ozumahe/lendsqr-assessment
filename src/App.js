@@ -3,7 +3,7 @@ import "./styles/app.scss";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Layout />
     </div>
   );
