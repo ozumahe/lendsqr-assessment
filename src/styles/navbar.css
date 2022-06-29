@@ -61,6 +61,7 @@
 .nav .container .container__right .profile {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .nav .container .container__right .profile .profile__avatar {
   width: 40px;
