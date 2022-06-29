@@ -8,5 +8,70 @@
   z-index: 200;
   display: flex;
   align-items: center;
+}
+.nav .logo {
+  padding-left: 40px;
+  width: 283px;
+}
+.nav .nav__search {
+  width: 400px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #213f7d;
+  border-radius: 8px;
+  display: flex;
+  overflow: hidden;
+}
+.nav .nav__search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.nav .nav__search .nav__search__icon {
+  width: 56px;
+  height: 100%;
+  background: #39cdcc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 40px;
+}
+.nav .container a {
+  font-size: 16px;
+  color: #213f7d;
+  font-weight: 400;
+}
+.nav .container .container__right {
+  display: flex;
+  align-items: center;
+}
+.nav .container .container__right .bell {
+  margin-left: 30px;
+  margin-right: 20px;
+}
+.nav .container .container__right .profile {
+  display: flex;
+  align-items: center;
+}
+.nav .container .container__right .profile .profile__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.nav .container .container__right .profile .profile__name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #213f7d;
+  margin: 0 10px;
 }/*# sourceMappingURL=navbar.css.map */

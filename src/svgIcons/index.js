@@ -17,3 +17,6 @@ export { default as Scroll } from "./Scroll";
 export { default as SliderH } from "./SliderH";
 export { default as BadgePercent } from "./BadgePercent";
 export { default as ClipBoardList } from "./ClipBoardList";
+export { default as SearchIcon } from "./SearchIcon";
+export { default as BellIcon } from "./BellIcon";
+export { default as ProfileDrop } from "./ProfileDrop";
