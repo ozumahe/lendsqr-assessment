@@ -37,6 +37,94 @@ const BodyItem = () => {
       dataJoined: "May 15, 2020 10:00 AM",
       status: "Active",
     },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
+    {
+      organization: "Lendsqr",
+      username: "Adedeji",
+      email: "adedeji@lendsqr.com",
+      phoneNumber: "08078903721",
+      dataJoined: "May 15, 2020 10:00 AM",
+      status: "Active",
+    },
   ];
 
   const userStatusColor = (status) => {
@@ -102,9 +190,7 @@ const BodyItem = () => {
           </td>
           <td>
             <div className="table__options__container">
-              <button>
-                <Option />
-              </button>
+              <Option />
               <div className="table__options">
                 <div className="table__option">
                   <View /> <p>View Details</p>

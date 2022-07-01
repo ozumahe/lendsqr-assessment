@@ -38,6 +38,7 @@
     margin-top: 30px;
 
     table {
+      position: relative;
       background: #ffffff;
       border: 1px solid rgba(33, 63, 125, 0.06);
       box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -84,6 +85,76 @@
         }
         .table__options__container:active .table__options {
           display: block;
+        }
+      }
+
+      .filter {
+        position: absolute;
+        top: 60px;
+        width: 270px;
+        height: fit-content;
+        padding-top: 10px;
+        // padding-bottom: 10px;
+        background: #ffffff;
+        border: 1px solid rgba(84, 95, 125, 0.14);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+
+        .section {
+          width: fit-content;
+          margin: 0 auto;
+          p {
+            font-size: 14px;
+            font-weight: 500;
+            color: #545f7d;
+          }
+          select,
+          input,
+          .date {
+            width: 230px;
+            height: 40px;
+            background: #ffffff;
+            border: 1px solid #213f7d;
+            border-radius: 8px;
+            color: #545f7d;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: 400;
+          }
+          input {
+            padding-left: 10px;
+            color: #545f7d;
+            outline: none;
+          }
+          .date {
+            display: flex;
+          }
+          .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            // margin-top: 20px;
+            margin: 30px 0;
+
+            button {
+              width: 98px;
+              height: 40px;
+              border-radius: 8px;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 16px;
+            }
+            .button1 {
+              border: 1px solid #545f7d;
+              background: #fff;
+              color: #545f7d;
+            }
+            .button2 {
+              background: #39cdcc;
+              border: 1px solid #39cdcc;
+              color: #fff;
+            }
+          }
         }
       }
     }
