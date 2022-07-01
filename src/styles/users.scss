@@ -78,6 +78,14 @@
           outline: none;
         }
       }
+      tr:hover {
+        .table__options__container .table__options {
+          display: block;
+        }
+        .table__options__container:active .table__options {
+          display: block;
+        }
+      }
     }
 
     .controller {
@@ -117,6 +125,65 @@
         }
       }
       .right {
+        display: flex;
+
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(33, 63, 125, 0.1);
+          border-radius: 4px;
+          border: none;
+          outline: none;
+          margin-left: 5px;
+          margin-right: 5px;
+          width: 24px;
+          height: 24px;
+        }
+        .numbers {
+          display: flex;
+          p {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #545f7d;
+            margin-left: 10px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    .table__options__container {
+      position: relative;
+    }
+
+    .table__options {
+      position: absolute;
+      display: none;
+      right: 0;
+      width: 180px;
+      height: 130px;
+      background: #ffffff;
+      border: 1px solid rgba(84, 95, 125, 0.04);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      z-index: 1;
+
+      .table__option {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        padding-left: 20px;
+        cursor: pointer;
+
+        p {
+          font-size: 14px;
+          font-weight: 500;
+          color: #545f7d;
+          margin: 0;
+          margin-left: 10px;
+        }
       }
     }
   }

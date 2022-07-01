@@ -26,3 +26,8 @@ export { default as UserswithLoans } from "./UserswithLoans";
 export { default as UserswithSavings } from "./UserswithSavings";
 export { default as TableIcon } from "./TableIcon";
 export { default as Option } from "./Option";
+export { default as PrevIcon } from "./PrevIcon";
+export { default as NextIcon } from "./NextIcon";
+export { default as View } from "./View";
+export { default as ActiveUser } from "./ActiveUser";
+export { default as BlacklistUser } from "./BlacklistUser";

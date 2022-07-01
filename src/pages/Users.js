@@ -7,6 +7,11 @@ import {
   UserswithLoans,
   UserswithSavings,
   Dropdown,
+  PrevIcon,
+  NextIcon,
+  View,
+  ActiveUser,
+  BlacklistUser,
 } from "../svgIcons";
 
 const Users = () => {
@@ -37,7 +42,22 @@ const Users = () => {
             </div>
             <p className="showing">out of 100</p>
           </div>
-          <div className="right"></div>
+          <div className="right">
+            <button>
+              <PrevIcon />
+            </button>
+            <div className="numbers">
+              <p>1</p>
+              <p>2</p>
+              <p>3</p>
+              <p>...</p>
+              <p>15</p>
+              <p>16</p>
+            </div>
+            <button>
+              <NextIcon />
+            </button>
+          </div>
         </div>
       </div>
     </div>
