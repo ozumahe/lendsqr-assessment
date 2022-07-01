@@ -25,3 +25,4 @@ export { default as ActiveUsers } from "./ActiveUsers";
 export { default as UserswithLoans } from "./UserswithLoans";
 export { default as UserswithSavings } from "./UserswithSavings";
 export { default as TableIcon } from "./TableIcon";
+export { default as Option } from "./Option";

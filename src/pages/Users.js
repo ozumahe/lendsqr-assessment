@@ -6,6 +6,7 @@ import {
   ActiveUsers,
   UserswithLoans,
   UserswithSavings,
+  Dropdown,
 } from "../svgIcons";
 
 const Users = () => {
@@ -24,6 +25,20 @@ const Users = () => {
       </div>
       <div className="table">
         <Table />
+
+        <div className="controller">
+          <div className="left">
+            <p className="showing">Showing</p>
+            <div className="select_container">
+              <div className="select">
+                <p>100</p>
+                <Dropdown />
+              </div>
+            </div>
+            <p className="showing">out of 100</p>
+          </div>
+          <div className="right"></div>
+        </div>
       </div>
     </div>
   );
