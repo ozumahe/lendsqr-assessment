@@ -20,3 +20,8 @@ export { default as ClipBoardList } from "./ClipBoardList";
 export { default as SearchIcon } from "./SearchIcon";
 export { default as BellIcon } from "./BellIcon";
 export { default as ProfileDrop } from "./ProfileDrop";
+export { default as Users2 } from "./Users2";
+export { default as ActiveUsers } from "./ActiveUsers";
+export { default as UserswithLoans } from "./UserswithLoans";
+export { default as UserswithSavings } from "./UserswithSavings";
+export { default as TableIcon } from "./TableIcon";

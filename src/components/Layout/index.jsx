@@ -1,13 +1,14 @@
 import React from "react";
 import Navbar from "../Navbar";
 import SideBar from "../Navbar/SideBar";
+import "../../styles/layout.scss";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <div>
       <Navbar />
       <SideBar />
-      <main>lorem</main>
+      <main className="main">{children}</main>
     </div>
   );
 };
