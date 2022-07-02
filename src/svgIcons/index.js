@@ -31,3 +31,4 @@ export { default as NextIcon } from "./NextIcon";
 export { default as View } from "./View";
 export { default as ActiveUser } from "./ActiveUser";
 export { default as BlacklistUser } from "./BlacklistUser";
+export { default as BackIcon } from "./BackIcon";
