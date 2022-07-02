@@ -137,6 +137,29 @@ const UserDetails = () => {
             </div>
           </div>
         </div>
+
+        {/* Guarantor */}
+        <div className="section">
+          <p className="header">Guarantor</p>
+          <div className="row">
+            <div>
+              <p className="title_name">full Name</p>
+              <p className="title">Debby Ogana</p>
+            </div>
+            <div>
+              <p className="title_name">Phone Number</p>
+              <p className="title">07060780922</p>
+            </div>
+            <div>
+              <p className="title_name">Email Address</p>
+              <p className="title">debby@gmail.com</p>
+            </div>
+            <div>
+              <p className="title_name">Relationship</p>
+              <p className="title">Sister</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
