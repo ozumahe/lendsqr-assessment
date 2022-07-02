@@ -1,0 +1,107 @@
+.signin {
+  max-width: 1440px;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0 auto;
+}
+.signin .container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.signin .container .image {
+  justify-self: center;
+  align-self: center;
+}
+.signin .container .form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-self: center;
+}
+.signin .container .form .header {
+  font-size: 40px;
+  font-weight: 700;
+  color: #213f7d;
+  margin: 0;
+}
+.signin .container .form .sub {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 10px;
+  color: #545f7d;
+}
+.signin .container .form form {
+  margin-top: 70px;
+}
+.signin .container .form .input_container {
+  display: flex;
+  align-items: center;
+  max-width: 447px;
+  height: 50px;
+  background: #ffffff;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  border-radius: 5px;
+  margin-top: 30px;
+}
+.signin .container .form .input_container input {
+  height: 100%;
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.signin .container .form .input_container input ::-moz-placeholder {
+  color: #545f7d;
+  font-size: 14px;
+  font-weight: 400;
+}
+.signin .container .form .input_container input :-ms-input-placeholder {
+  color: #545f7d;
+  font-size: 14px;
+  font-weight: 400;
+}
+.signin .container .form .input_container input ::placeholder {
+  color: #545f7d;
+  font-size: 14px;
+  font-weight: 400;
+}
+.signin .container .form .input_container .button {
+  width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 10%;
+  color: #39cdcc;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.signin .container .form .for {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 10%;
+  color: #39cdcc;
+  text-transform: uppercase;
+}
+.signin .container .form button {
+  margin-top: 20px;
+  width: 447px;
+  height: 48px;
+  border-radius: 8px;
+  background: #39cdcc;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 10%;
+}/*# sourceMappingURL=signin.css.map */
