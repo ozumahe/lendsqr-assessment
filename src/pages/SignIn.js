@@ -38,7 +38,12 @@ const SignIn = () => {
               </div>
             </div>
             <p className="for">Forgot PASSWORD?</p>
-            <button onClick={() => navigate("/users")}>Log in</button>
+            <button
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/users")}
+            >
+              Log in
+            </button>
           </form>
         </div>
       </div>
