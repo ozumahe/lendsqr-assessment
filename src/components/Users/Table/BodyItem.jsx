@@ -1,132 +1,10 @@
 import React, { useState } from "react";
 import { ActiveUser, BlacklistUser, Option, View } from "../../../svgIcons";
-
+import usersData from "../../../data/MOCK_DATA.json";
+import { useNavigate } from "react-router-dom";
 const BodyItem = () => {
   const [showOption, setShowOption] = useState(false);
-
-  const data = [
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Inactive",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Pending",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Blacklisted",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-    {
-      organization: "Lendsqr",
-      username: "Adedeji",
-      email: "adedeji@lendsqr.com",
-      phoneNumber: "08078903721",
-      dataJoined: "May 15, 2020 10:00 AM",
-      status: "Active",
-    },
-  ];
-
+  const navigate = useNavigate();
   const userStatusColor = (status) => {
     switch (status) {
       case "inactive":
@@ -141,6 +19,7 @@ const BodyItem = () => {
         break;
     }
   };
+
   const userStatusBgColor = (status) => {
     switch (status) {
       case "inactive":
@@ -156,15 +35,16 @@ const BodyItem = () => {
     }
   };
 
-  const handleOption = () => {
-    setShowOption(!showOption);
-  };
   return (
     <>
-      {data.map((data, i) => (
+      {usersData.map((data, i) => (
         <tr key={i}>
           <td>
-            <p>{data.organization}</p>
+            <p>
+              {data.company_name.length > 7
+                ? data.company_name.substring(0, 7)
+                : data.company_name}
+            </p>
           </td>
           <td>
             <p>{data.username}</p>
@@ -173,10 +53,10 @@ const BodyItem = () => {
             <p>{data.email}</p>
           </td>
           <td>
-            <p>{data.phoneNumber}</p>
+            <p>{data.phone_number}</p>
           </td>
           <td>
-            <p>{data.dataJoined}</p>
+            <p>{data.date_joined}</p>
           </td>
           <td>
             <button
@@ -192,7 +72,10 @@ const BodyItem = () => {
             <div className="table__options__container">
               <Option />
               <div className="table__options">
-                <div className="table__option">
+                <div
+                  className="table__option"
+                  onClick={() => navigate(`/user/${data.id}/details`)}
+                >
                   <View /> <p>View Details</p>
                 </div>
                 <div className="table__option">

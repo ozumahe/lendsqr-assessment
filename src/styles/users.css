@@ -177,8 +177,10 @@
 }
 .users .table .controller .right {
   display: flex;
+  align-items: center;
+  list-style-type: none;
 }
-.users .table .controller .right button {
+.users .table .controller .right .button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,20 +188,24 @@
   border-radius: 4px;
   border: none;
   outline: none;
+  cursor: pointer;
   margin-left: 5px;
   margin-right: 5px;
   width: 24px;
   height: 24px;
 }
-.users .table .controller .right .numbers {
-  display: flex;
+.users .table .controller .right .active {
+  color: #fff;
+  background: rgb(33, 63, 125);
 }
-.users .table .controller .right .numbers p {
+.users .table .controller .right .numbers {
   margin: 0;
-  padding: 0;
+  padding: 5px;
+  border-radius: 4px;
   font-size: 16px;
   font-weight: 500;
   color: #545f7d;
+  cursor: pointer;
   margin-left: 10px;
   margin-right: 10px;
 }

@@ -7,60 +7,40 @@ import {
   ActiveUsers,
   UserswithLoans,
   UserswithSavings,
-  Dropdown,
-  PrevIcon,
-  NextIcon,
-  View,
-  ActiveUser,
-  BlacklistUser,
 } from "../svgIcons";
+import users from "../data/MOCK_DATA.json";
 
 const Users = () => {
+  const activeusers = users.filter((user) => user.status === "active");
+  const userWithLoans = users.filter((user) => user.status === "inactive");
+  const usersWithoutSavins = users.filter(
+    (user) => user.status === "blacklisted"
+  );
+
   return (
     <Layout>
       <div className="users">
         <p className="header">Users</p>
         <div className="users_container">
-          <Card Icon={Users2} title="Users" total="2,453" />
-          <Card Icon={ActiveUsers} title="Active Users" total="2,453" />
-          <Card Icon={UserswithLoans} title="Users with Loans" total="2,453" />
+          <Card Icon={Users2} title="Users" total={users.length} />
+          <Card
+            Icon={ActiveUsers}
+            title="Active Users"
+            total={activeusers.length}
+          />
+          <Card
+            Icon={UserswithLoans}
+            title="Users with Loans"
+            total={userWithLoans.length}
+          />
           <Card
             Icon={UserswithSavings}
             title="Users with Savings"
-            total="2,453"
+            total={usersWithoutSavins.length}
           />
         </div>
         <div className="table">
           <Table />
-
-          <div className="controller">
-            <div className="left">
-              <p className="showing">Showing</p>
-              <div className="select_container">
-                <div className="select">
-                  <p>100</p>
-                  <Dropdown />
-                </div>
-              </div>
-              <p className="showing">out of 100</p>
-            </div>
-            <div className="right">
-              <button>
-                <PrevIcon />
-              </button>
-              <div className="numbers">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>...</p>
-                <p>15</p>
-                <p>16</p>
-              </div>
-              <button>
-                <NextIcon />
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </Layout>

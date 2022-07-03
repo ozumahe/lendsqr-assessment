@@ -197,8 +197,9 @@
       }
       .right {
         display: flex;
-
-        button {
+        align-items: center;
+        list-style-type: none;
+        .button {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -206,22 +207,26 @@
           border-radius: 4px;
           border: none;
           outline: none;
+          cursor: pointer;
           margin-left: 5px;
           margin-right: 5px;
           width: 24px;
           height: 24px;
         }
+        .active {
+          color: #fff;
+          background: rgba(33, 63, 125, 1);
+        }
         .numbers {
-          display: flex;
-          p {
-            margin: 0;
-            padding: 0;
-            font-size: 16px;
-            font-weight: 500;
-            color: #545f7d;
-            margin-left: 10px;
-            margin-right: 10px;
-          }
+          margin: 0;
+          padding: 5px;
+          border-radius: 4px;
+          font-size: 16px;
+          font-weight: 500;
+          color: #545f7d;
+          cursor: pointer;
+          margin-left: 10px;
+          margin-right: 10px;
         }
       }
     }
