@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import "../styles/signin.scss";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [showPaassword, setShowPaassword] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "testing@gmail.com",
+    password: "testing123",
+  });
 
   return (
     <div className="signin">
@@ -16,10 +22,11 @@ const SignIn = () => {
           <p className="sub">Enter details to login.</p>
           <form>
             <div className="input_container">
-              <input type="text" placeholder="Email" />
+              <input value={formData.email} type="text" placeholder="Email" />
             </div>
             <div className="input_container">
               <input
+                value={formData.password}
                 type={showPaassword ? "text" : "password"}
                 placeholder="Password"
               />
@@ -31,7 +38,7 @@ const SignIn = () => {
               </div>
             </div>
             <p className="for">Forgot PASSWORD?</p>
-            <button>Log in</button>
+            <button onClick={() => navigate("/users")}>Log in</button>
           </form>
         </div>
       </div>
