@@ -32,6 +32,7 @@ const Table = () => {
     "pending",
   ]);
   const [filterStatus, setFilterStatus] = useState("");
+  const [filterCompany, setFilterCompany] = useState("");
 
   useEffect(() => {
     getUsersCompanies();
@@ -40,7 +41,7 @@ const Table = () => {
 
   const filteTable = () => {
     const filtered = usersData.filter((data) =>
-      filterStatus ? data.status === filterStatus : data
+      filterStatus ? data.company_name === filterStatus : data
     );
 
     setTableData(filtered);
@@ -116,6 +117,11 @@ const Table = () => {
     setFilterStatus(value);
   };
 
+  const companyHandler = (event) => {
+    const value = event.target.value;
+    setFilterCompany(value);
+  };
+
   return (
     <>
       <table>
@@ -188,72 +194,72 @@ const Table = () => {
             </tr>
           ))}
         </tbody>
-        {filter && (
-          <div className="filter">
-            <div className="section">
-              <p>Organization</p>
-              <select placeholder="Select" name="" id="">
-                <option value="Select" selected disabled hidden>
-                  Select
+      </table>
+      {filter && (
+        <div className="filter">
+          <div className="section">
+            <p>Organization</p>
+            <select onChange={companyHandler}>
+              <option value="Select" selected disabled hidden>
+                Select
+              </option>
+              {usersCompany.map((data, i) => (
+                <option key={i} value={data}>
+                  {data.length > 30 ? `${data.substring(0, 30)}...` : data}
                 </option>
-                {usersCompany.map((data, i) => (
-                  <option key={i} value={data}>
-                    {data.length > 30 ? `${data.substring(0, 30)}...` : data}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="section">
-              <p>Username</p>
-              <input name="" id="" placeholder="Email" />
-            </div>
+              ))}
+            </select>
+          </div>
+          <div className="section">
+            <p>Username</p>
+            <input name="" id="" placeholder="Email" />
+          </div>
 
-            <div className="section">
-              <p>Date</p>
-              <input
-                type="date"
-                // style={{ display: "none" }}
-                name=""
-                id="date"
-                placeholder="Date"
-              />
-            </div>
-            <div className="section">
-              <p>Phone Number</p>
-              <input name="" id="" placeholder="Phone Number" />
-            </div>
-            <div className="section">
-              <p>Status</p>
-              <select onChange={statusHandler}>
-                <option value="Select" selected disabled hidden>
-                  Select
-                </option>
-                <option value="">All</option>
-                {usersStatus.map((data, i) => (
-                  <option
-                    key={i}
-                    value={data}
-                    style={{ textTransform: "capitalize" }}
-                  >
-                    {data}
-                  </option>
-                ))}
-              </select>
-
-              <div className="buttons">
-                <button className="button1">Reset</button>
-                <button
-                  onClick={filteTable}
-                  className="button2"
-                  style={{ cursor: "pointer" }}
+          <div className="section">
+            <p>Date</p>
+            <input
+              type="date"
+              // style={{ display: "none" }}
+              name=""
+              id="date"
+              placeholder="Date"
+            />
+          </div>
+          <div className="section">
+            <p>Phone Number</p>
+            <input name="" id="" placeholder="Phone Number" />
+          </div>
+          <div className="section">
+            <p>Status</p>
+            <select onChange={statusHandler}>
+              <option value="Select" selected disabled hidden>
+                Select
+              </option>
+              <option value="">All</option>
+              {usersStatus.map((data, i) => (
+                <option
+                  key={i}
+                  value={data}
+                  style={{ textTransform: "capitalize" }}
                 >
-                  Filter
-                </button>
-              </div>
+                  {data}
+                </option>
+              ))}
+            </select>
+
+            <div className="buttons">
+              <button className="button1">Reset</button>
+              <button
+                onClick={filteTable}
+                className="button2"
+                style={{ cursor: "pointer" }}
+              >
+                Filter
+              </button>
             </div>
           </div>
-        )}
-      </table>
+        </div>
+      )}
       <div className="controller">
         <div className="left">
           <p className="showing">Showing</p>
