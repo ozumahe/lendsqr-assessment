@@ -41,7 +41,7 @@ const Table = () => {
 
   const filteTable = () => {
     const filtered = usersData.filter((data) =>
-      filterStatus ? data.company_name === filterStatus : data
+      filterStatus ? data.status === filterStatus : data
     );
 
     setTableData(filtered);
