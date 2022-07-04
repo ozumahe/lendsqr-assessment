@@ -24,11 +24,10 @@ import "../../../styles/sidebar.scss";
 import UserFriends from "../../../svgIcons/UserFriends";
 import Hand from "../../../svgIcons/Hand";
 import ChartBar from "../../../svgIcons/ChartBar";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const SideBar = () => {
   const location = useLocation();
-  // const navigate = useNavigate();
 
   return (
     <div className="sidebar">

@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
 const Table = () => {
+  const [tableData, setTableData] = useState(usersData);
   const [filter, setFilter] = useState(false);
   const navigate = useNavigate();
   // We start with an empty list of items.
@@ -23,18 +24,50 @@ const Table = () => {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
+  const [usersCompany, setUsersCompany] = useState([]);
+  const [usersStatus, setUsersStatus] = useState([
+    "inactive",
+    "active",
+    "blacklisted",
+    "pending",
+  ]);
+  const [filterStatus, setFilterStatus] = useState("");
+
+  useEffect(() => {
+    getUsersCompanies();
+    filteTable();
+  }, []);
+
+  const filteTable = () => {
+    const filtered = usersData.filter((data) =>
+      filterStatus ? data.status === filterStatus : data
+    );
+
+    setTableData(filtered);
+  };
+
+  const getUsersCompanies = () => {
+    const companys = tableData.reduce((accumulator, value) => {
+      if (!accumulator.includes(value.company_name)) {
+        accumulator.push(value.company_name);
+      }
+      return accumulator;
+    }, []);
+
+    setUsersCompany(companys);
+  };
 
   useEffect(() => {
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
 
-    setCurrentItems(usersData.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(usersData.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage]);
+    setCurrentItems(tableData.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(tableData.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, tableData]);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % usersData.length;
+    const newOffset = (event.selected * itemsPerPage) % tableData.length;
 
     setItemOffset(newOffset);
   };
@@ -77,6 +110,11 @@ const Table = () => {
     "Date joined",
     "Status",
   ];
+
+  const statusHandler = (event) => {
+    const value = event.target.value;
+    setFilterStatus(value);
+  };
 
   return (
     <>
@@ -158,6 +196,11 @@ const Table = () => {
                 <option value="Select" selected disabled hidden>
                   Select
                 </option>
+                {usersCompany.map((data, i) => (
+                  <option key={i} value={data}>
+                    {data.length > 30 ? `${data.substring(0, 30)}...` : data}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="section">
@@ -181,15 +224,31 @@ const Table = () => {
             </div>
             <div className="section">
               <p>Status</p>
-              <select placeholder="Select" name="" id="">
+              <select onChange={statusHandler}>
                 <option value="Select" selected disabled hidden>
                   Select
                 </option>
+                <option value="">All</option>
+                {usersStatus.map((data, i) => (
+                  <option
+                    key={i}
+                    value={data}
+                    style={{ textTransform: "capitalize" }}
+                  >
+                    {data}
+                  </option>
+                ))}
               </select>
 
               <div className="buttons">
                 <button className="button1">Reset</button>
-                <button className="button2">Filter</button>
+                <button
+                  onClick={filteTable}
+                  className="button2"
+                  style={{ cursor: "pointer" }}
+                >
+                  Filter
+                </button>
               </div>
             </div>
           </div>
