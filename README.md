@@ -4,8 +4,9 @@ It will be ideal if you use yarn to install dependencies
 
 ### Tech Stack
 
-React Js
-SCSS
+**[React Js](https://reactjs.org/)**
+
+**[SCSS](https://sass-lang.com/)**
 
 ### Run
 
