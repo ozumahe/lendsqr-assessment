@@ -24,8 +24,12 @@ import "../../../styles/sidebar.scss";
 import UserFriends from "../../../svgIcons/UserFriends";
 import Hand from "../../../svgIcons/Hand";
 import ChartBar from "../../../svgIcons/ChartBar";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SideBar = () => {
+  const location = useLocation();
+  // const navigate = useNavigate();
+
   return (
     <div className="sidebar">
       <div>
@@ -41,7 +45,11 @@ const SideBar = () => {
         {/* CUSTOMERS */}
         <div className="sidebar__nav__section">
           <p className="header">CUSTOMERS</p>
-          <div className="sidebar__nav__section__option active">
+          <div
+            className={`sidebar__nav__section__option ${
+              location.pathname === "/users" ? "active" : ""
+            }`}
+          >
             <UserFriends />
             <p className="text activetext">Users</p>
           </div>
@@ -77,7 +85,11 @@ const SideBar = () => {
         {/* BUSINESSES */}
         <div className="sidebar__nav__section">
           <p className="header">CUSTOMERS</p>
-          <div className="sidebar__nav__section__option active">
+          <div
+            className={`sidebar__nav__section__option ${
+              location.pathname === "/organization" ? "active" : ""
+            }`}
+          >
             <Briefcase />
             <p className="text activetext">Organization</p>
           </div>
@@ -117,7 +129,11 @@ const SideBar = () => {
         {/* SETTING */}
         <div className="sidebar__nav__section">
           <p className="header">SETTINGS</p>
-          <div className="sidebar__nav__section__option active">
+          <div
+            className={`sidebar__nav__section__option ${
+              location.pathname === "/preferences" ? "active" : ""
+            }`}
+          >
             <SliderH />
             <p className="text activetext">Preferences</p>
           </div>
