@@ -10,9 +10,17 @@ const SignIn = () => {
     password: "testing123",
   });
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setFormData({ [name]: value });
+  };
+
   return (
     <div className="signin">
-      <img src="assets/images/logo.png" alt="logo here" />
+      <div className="header">
+        <img src="assets/images/logo.png" alt="logo here" />
+      </div>
       <div className="container">
         <div className="image">
           <img src="/assets/images/pablo-sign-in1.png" alt="" />
@@ -22,11 +30,19 @@ const SignIn = () => {
           <p className="sub">Enter details to login.</p>
           <form>
             <div className="input_container">
-              <input value={formData.email} type="text" placeholder="Email" />
+              <input
+                value={formData.email}
+                onChange={handleChange}
+                name="email"
+                type="text"
+                placeholder="Email"
+              />
             </div>
             <div className="input_container">
               <input
                 value={formData.password}
+                name="password"
+                onChange={handleChange}
                 type={showPaassword ? "text" : "password"}
                 placeholder="Password"
               />
